@@ -1,0 +1,43 @@
+<html>
+<head>
+    </head>
+    
+   <body>
+<div class="container">
+   
+    <table class="table table-striped" *ngIf="employees && !error && employees.length > 0  ">
+        <thead>
+        <tr>
+            <th>EMPLOYEE ID</th>
+            <th>EMPLOYEE NAME</th>
+            <th>Email</th>
+            <th>DELETE EMPLOYEE</th>
+            <th>EDIT EMPLOYEE</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let e of employees" style="text-align: center;">
+                <td> {{e.id}} </td>
+                <td> {{e.name}} </td>
+                <td>{{e.email}}</td>
+                <td>
+                    <i class="fas fa-trash"(click) =delete(e)></i>
+                </td>
+                <td>
+                 <i class="fas fa-edit" (click)=update(e)></i>
+                </td>
+                <td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="error" >
+        <h4 class="alert alert-danger"> {{error}}</h4>
+    </div>
+
+  
+</div>
+<div>
+
+</div>
+</body>
+</html>
